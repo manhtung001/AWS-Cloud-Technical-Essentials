@@ -1,0 +1,95 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\fmodern\fcharset0 Courier-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red24\green24\blue24;\red255\green255\blue255;\red234\green234\blue234;
+}
+{\*\expandedcolortbl;;\cssrgb\c12157\c12157\c12157;\cssrgb\c100000\c100000\c100000;\cssrgb\c93333\c93333\c93333;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Every action you make in AWS is an API call that is authenticated and authorized. In AWS, you can make API calls to services and resources through the AWS Management Console, the AWS Command Line Interface (CLI), or the AWS Software Development Kits (SDKs). \
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+
+\fs44 \cf2 The AWS Management Console\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\fs28 \cf2 One way to manage cloud resources is through the web-based console, where you log in and click on the desired service. This can be the easiest way to create and manage resources when you\'92re first begin working with the cloud. Below is a screenshot that shows the landing page when you first log into the AWS Management Console. \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {{\NeXTGraphic Pasted Graphic.jpg \width9350 \height5817 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The services are placed in categories, such as compute, database, storage and security, identity and compliance.\
+\
+On the upper right corner is the Region selector. If you click it and change the Region, you will make requests to the services in the chosen Region. The URL changes, too. Changing the Region directs the browser to make requests to a whole different AWS Region, represented by a different subdomain.\
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+
+\fs44 \cf2 The AWS Command Line Interface (CLI)\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\fs28 \cf2 Consider the scenario where you run tens of servers on AWS for your application\'92s frontend. You want to run a report to collect data from all of these servers. You need to do this programmatically every day because the server details may change. Instead of manually logging into the AWS Management Console and copying/pasting information, you can schedule an AWS Command Line Interface (CLI) script with an API call to pull this data for you.\
+\
+The AWS CLI is a unified tool to manage AWS services. With just one tool to download and configure, you control multiple AWS services from the command line and automate them with scripts. The AWS CLI is open-source, and there are installers available for Windows, Linux, and Mac OS. \
+\
+Here is an example of running an API call against a service using the AWS CLI: 
+\f2\b\fs26\fsmilli13300 \cb4 aws ec2 describe-instances
+\f0\b0\fs28 \cb3 \
+\
+You get this response:\
+ \
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f2\b\fs26\fsmilli13300 \cf2 \cb4 \{
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4     "Reservations": [
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4         \{
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4             "Groups": [],
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4             "Instances": [
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4                 \{
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4                     "AmiLaunchIndex": 0,
+\f0\b0\fs28 \cb3 \
+\
+and so on.\
+\pard\pardeftab720\sl480\sa320\partightenfactor0
+
+\fs44 \cf2 AWS Software Development Kits (SDKs)\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\fs28 \cf2 API calls to AWS can also be performed by executing code with programming languages. You can do this by using AWS Software Development Kits (SDKs). SDKs are open-source and maintained by AWS for the most popular programming languages, such as C++, Go, Java, JavaScript, .NET, Node.js, PHP, Python, and Ruby.\
+\
+Developers commonly use AWS SDKs to integrate their application source code with AWS services. Let\'92s say the frontend of the application runs in Python and every time it receives a cat photo, it uploads that photo to a storage service. This action can be achieved from within the source code by using the AWS SDK for Python.\
+\
+Here is an example of code you can implement to work with AWS resources using the Python AWS SDK.\
+\
+\pard\pardeftab720\sl420\sa400\partightenfactor0
+
+\f2\b\fs26\fsmilli13300 \cf2 \cb4 import boto3
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4 ec2 = boto3.client('ec2')
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4 response = ec2.describe_instances()
+\f0\b0\fs28 \cb3 \
+
+\f2\b\fs26\fsmilli13300 \cb4 print(response)
+\f0\b0\fs28 \cb3 \
+}
